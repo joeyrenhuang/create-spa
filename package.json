@@ -1,0 +1,22 @@
+{
+  "name": "web-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "bin": {
+    "web": "src/index.coffee"
+  },
+  "scripts": {
+    "wb": "coffee -o lib/ -cw src/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "coffeescript": "^2.6.1"
+  },
+  "dependencies": {
+    "commander": "^8.3.0",
+    "inquirer": "^8.2.0",
+    "shelljs": "^0.8.4"
+  }
+}
