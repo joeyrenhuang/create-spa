@@ -7,7 +7,8 @@
     "web": "src/index.coffee"
   },
   "scripts": {
-    "wb": "coffee -o lib/ -cw src/"
+    "dev": "if [ -z $(which web) ]; then  npm link;  fi; echo 'Coffeescript required! If coffee command not avaible, You need run manually:\nPATH=$(npm bin):$PATH'",
+    "build": "coffee -o lib/ -c src/"
   },
   "author": "",
   "license": "ISC",
