@@ -1,7 +1,7 @@
 cfging = require './cfging'
 module.exports = (tpl, app) ->
   if !tpl then return cfging()
-  create(tpl, app || """#{tpl}-app""")
+  create tpl, app || """#{tpl}-app"""
 
 
 create = (tpl, app) ->
@@ -23,12 +23,16 @@ clone = (url, app) ->
     dir = url.match(/\.git\/(.*)/)[1]
     url = url.match(/(.*\.git)/)[1]
   if (shell.exec """git clone --depth=1 #{url} #{app}""").code is 0
+    shell.cd app
     if dir
-      shell.cd(app)
       shell.exec("""FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter #{dir} HEAD""")
-      shell.rm '-rf', """./.git"""
+    shell.rm '-rf', """./.git"""
+    # addons: add initial css / jsex
+    if (app.indexOf 'src') is -1 
+      create 'jsex', 'src/jsex'
+      create 'css', 'src/css'
     else
-      shell.rm '-rf', """./#{app}/.git"""
+      return shell.cd '../..'
     console.log 'Initial your app success.'
     shell.exit 0
   else shell.exit 1

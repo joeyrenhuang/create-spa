@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "if [ -z $(which web) ]; then  npm link;  fi; echo 'Coffeescript required! If coffee command not avaible, You need run manually:\nPATH=$(npm bin):$PATH'",
-    "build": "coffee -o lib/ -c src/"
+    "build": "coffee -o lib/ -c src/",
+    "test": "cd __test__ && rm -rf * && web init vue && web init react && web"
   },
   "author": "",
   "license": "ISC",
