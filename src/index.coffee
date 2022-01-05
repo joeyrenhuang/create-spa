@@ -1,4 +1,5 @@
 #!/usr/bin/env coffee
+
 # enter point
 { program } = require 'commander'
 

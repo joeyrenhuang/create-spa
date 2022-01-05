@@ -1,14 +1,15 @@
 {
-  "name": "web-cli",
+  "name": "create-spa",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
   "bin": {
-    "web": "src/index.coffee"
+    "webdev": "src/index.coffee",
+    "web": "lib/index.js"
   },
   "scripts": {
     "dev": "if [ -z $(which web) ]; then  npm link;  fi; echo 'Coffeescript required! If coffee command not avaible, You need run manually:\nPATH=$(npm bin):$PATH'",
-    "build": "coffee -o lib/ -c src/",
+    "build": "coffee -o lib/ -c src/ && echo \"#!/usr/bin/env node\" | cat - lib/index.js > lib/temp.js && mv lib/temp.js lib/index.js && chmod 777 lib/index.js",
     "test": "cd __test__ && rm -rf * && web init vue && web init react && web"
   },
   "author": "",
