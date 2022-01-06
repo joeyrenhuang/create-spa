@@ -1,6 +1,6 @@
 {
   "name": "create-spa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
   "bin": {
@@ -13,7 +13,15 @@
     "build": "coffee -o lib/ -c src/ && echo \"#!/usr/bin/env node\" | cat - lib/index.js > lib/temp.js && mv lib/temp.js lib/index.js && chmod 777 lib/index.js",
     "test": "cd __test__ && rm -rf * && web init vue && web init react && web"
   },
-  "author": "",
+  "author": "joey.ren.huang@gmail.com",
+  "keywords": [
+    "cli",
+    "spa",
+    "web",
+    "vue",
+    "react",
+    "angular"
+  ],
   "license": "ISC",
   "devDependencies": {
     "coffeescript": "^2.6.1"
