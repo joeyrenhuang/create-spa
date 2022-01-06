@@ -1,11 +1,12 @@
 {
   "name": "create-spa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "lib/index.js",
   "bin": {
-    "webdev": "src/index.coffee",
-    "web": "lib/index.js"
+    "spadev": "src/index.coffee",
+    "spa": "lib/index.js",
+    "create-spa": "lib/index.js"
   },
   "scripts": {
     "dev": "if [ -z $(which web) ]; then  npm link;  fi; echo 'Coffeescript required! If coffee command not avaible, You need run manually:\nPATH=$(npm bin):$PATH'",
