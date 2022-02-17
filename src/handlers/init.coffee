@@ -16,6 +16,7 @@ create = (tpl, app) ->
     clone tpls[tpl], app
   else
     console.log """Template #{tpl} not found"""
+    console.log """Available Templates list: #{Object.keys(tpls)}"""
 
 clone = (url, app) ->
   shell = require 'shelljs' 

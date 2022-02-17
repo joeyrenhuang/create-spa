@@ -9,9 +9,9 @@
     "create-spa": "lib/index.js"
   },
   "scripts": {
-    "dev": "if [ -z $(which web) ]; then  npm link;  fi; echo 'Coffeescript required! If coffee command not avaible, You need run manually:\nPATH=$(npm bin):$PATH'",
+    "dev": "if [ -z $(which spa) ]; then  npm link;  fi; echo 'Coffeescript required! If coffee command not avaible, You need run manually:\nPATH=$(npm bin):$PATH'",
     "build": "coffee -o lib/ -c src/ && echo \"#!/usr/bin/env node\" | cat - lib/index.js > lib/temp.js && mv lib/temp.js lib/index.js && chmod 777 lib/index.js",
-    "test": "cd __test__ && rm -rf * && web init vue && web init react && web"
+    "test": "cd __test__ && rm -rf * && spa init vue && spa init react && spa"
   },
   "author": "joey.ren.huang@gmail.com",
   "keywords": [

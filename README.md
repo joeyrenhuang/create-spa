@@ -1,4 +1,4 @@
-A way to initial our spa project quicky, base on templates [vue, react, angular].
+A way to initial our spa project quickly, base on templates [vue, react, angular].
 ##### How to use
 ```
 - spa
